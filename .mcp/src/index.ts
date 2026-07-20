@@ -4,14 +4,16 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import { execSync } from "child_process";
 import { existsSync } from "fs";
-import { resolve } from "path";
+import { resolve, dirname } from "path";
+import { fileURLToPath } from "url";
 import { analyzeFormatSpecs } from "./tools/format_spec_support.js";
 import { generateTestSource, parseTestOutput } from "./tools/test_format.js";
 import { getEdgeCases, type Conversion } from "./tools/edge_cases.js";
 import { analyzeFormatString } from "./tools/flag_conflict.js";
 import { compileAndRun, ensureLibBuilt } from "./helpers/compile.js";
 
-const PROJECT_DIR = resolve("/home/cristian/Desktop/ft_printf");
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const PROJECT_DIR = resolve(__dirname, "..", "..");
 
 const server = new McpServer({
   name: "ft-printf-tools",

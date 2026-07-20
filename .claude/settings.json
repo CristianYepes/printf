@@ -2,7 +2,7 @@
   "mcpServers": {
     "ft-printf-tools": {
       "command": "node",
-      "args": ["/home/cristian/Desktop/ft_printf/.mcp/build/index.js"]
+      "args": [".mcp/build/index.js"]
     }
   }
 }
