@@ -1,0 +1,8 @@
+*.o
+*.a
+obj/
+.DS_Store
+.claude/settings.local.json
+.mcp/node_modules/
+.mcp/build/
+.mcp/package-lock.json
